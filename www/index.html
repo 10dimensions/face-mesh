@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>FaceMesh RunTime</title>
+  <meta name="description" content="Face Mesh Runtime">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script>
+  
+  <script src="src/webcam.js"></script>
+</head>
+
+<body>
+
+  <button id="play">Play</button>
+  <button id="pause">Pause</button>
+  <button id="stop">Stop</button>
+  <br />
+  <video id="camera" autoplay playsinline width="640" height="480"></video>
+
+  <script type="module" src="src/facemeshtf.js"></script>
+</body>
+</html>
