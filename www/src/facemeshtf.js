@@ -1,7 +1,13 @@
 //import in js
 //import * as facemesh from '@tensorflow-models/facemesh';
 
+var verts = [];
+
 async function main() {
+
+
+    console.log('main called');
+
     // Load the MediaPipe facemesh model.
     const model = await facemesh.load();
   
@@ -10,6 +16,12 @@ async function main() {
     const predictions = await model.estimateFaces(document.querySelector("video"));
   
     if (predictions.length > 0) {
+
+        var face = scene.getObjectByName('face');
+
+        if(face !== undefined){
+            //scene.getObjectByName('face').visible = true;
+        }
       /*
       `predictions` is an array of objects describing each detected face, for example:
   
@@ -40,18 +52,40 @@ async function main() {
         }
       ]
       */
-  
       for (let i = 0; i < predictions.length; i++) {
         const keypoints = predictions[i].scaledMesh;
+
+        verts = keypoints.flat();
+
+        // if(face !== undefined)
+        // {
+        //     face.geometry.attributes.position.array = verts;
+        //     face.geometry.attributes.position.needsUpdate = true;
+        // }
+        // else
+        // {
+        //     createFaceGeometry(verts);
+        // }
   
         // Log facial keypoints.
+        /*
         for (let i = 0; i < keypoints.length; i++) {
           const [x, y, z] = keypoints[i];
-  
+            
+          if(i=== 245 || i===465)
           console.log(`Keypoint ${i}: [${x}, ${y}, ${z}]`);
         }
+        */
       }
     }
+    else{
+
+        if(scene.getObjectByName('face') !== undefined){
+            //scene.getObjectByName('face').visible = false;
+        }
+    }
+
+    requestAnimationFrame(main);
   }
   
   main();
