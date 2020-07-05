@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>FaceMesh RunTime</title>
+  <meta name="description" content="Face Mesh Runtime">
+
+  <link rel="stylesheet" href="src/style/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script>
+  <script src="http://threejs.org/build/three.min.js"></script>
+
+  <script src="src/ConvexHull.js"></script>
+  <script src="src/ConvexGeometry.js"></script>
+
+  <script src="src/webcam.js"></script>
+</head>
+<body>
+
+  <button id="play">Play</button>
+  <button id="pause">Pause</button>
+  <button id="stop">Stop</button>
+  <br />
+
+  <div id="container" >
+
+    <video id="camera" autoplay playsinline >  </video>
+    <div id="scene"></div>
+  </div>
+
+  <script src="src/sunglass.js"></script>
+  <script type="module" src="src/facemeshtf.js"></script>
+</body>
+</html>

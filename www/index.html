@@ -1,34 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en-EN" />
+    
+    <title>JEELIZ FACE FILTER : THREE.JS CUBE DEMO WITH THREE.JS HELPER</title>
+    
+    <!-- INCLUDE JEELIZ FACEFILTER SCRIPT -->
+    <script src="./jeeliz/lib/jeelizFaceFilter.js"></script>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+    <!-- INCLUDE THREE.JS -->
+    <script src="http://threejs.org/build/three.min.js"></script>
 
-  <title>FaceMesh RunTime</title>
-  <meta name="description" content="Face Mesh Runtime">
+    <!-- INCLUDE JEELIZRESIZER -->
+    <script src="./jeeliz/lib/JeelizResizer.js"></script>
 
-  <link rel="stylesheet" href="src/style/styles.css">
+    <!-- INCLUDE JEELIZ THREE.JS HELPER -->
+    <script src="./jeeliz/lib/JeelizThreejsHelper.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh"></script>
-  <script src="http://threejs.org/build/three.min.js"></script>
+    <!-- INCLUDE DEMO SCRIPT -->
+    <script src="./jeeliz/demo.js"></script>
 
-  <script src="src/webcam.js"></script>
-</head>
-<body>
+    <!-- INCLUDE FORK ME ON GITHUB BANNER -->
+    <!-- <script src="../../appearance/widget.js"></script>
 
-  <button id="play">Play</button>
-  <button id="pause">Pause</button>
-  <button id="stop">Stop</button>
-  <br />
-
-  <div id="container" >
-
-    <video id="camera" autoplay playsinline >  </video>
-    <div id="scene"></div>
-  </div>
-
-  <script src="src/sunglass.js"></script>
-  <script type="module" src="src/facemeshtf.js"></script>
-</body>
+    <link rel="stylesheet" href="../../appearance/style.css" type="text/css" /> -->
+  </head>
+  
+  <body onload="main()" style='color: white'>
+    <canvas width="600" height="600" id='jeeFaceFilterCanvas'></canvas>
+  </body>
 </html>

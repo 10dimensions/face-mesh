@@ -3,6 +3,45 @@
 
 var verts = [];
 
+var updateTransform = function (){
+  
+if (positions) {
+  //current distance
+  var distance = Math.abs(90 / ((positions[0][0].toFixed(0) - positions[14][0].toFixed(0)) / 2));
+  //horizontal angle // горизонтальный угол (поворот лица)
+  var hAngle = 90 - (positions[14][0].toFixed(0) - positions[33][0].toFixed(0)) * distance;
+  //center point
+  var center = {
+      x: positions[33][0],
+      y: (positions[33][1] + positions[41][1]) / 2
+  };
+  center = ref.correct(center.x, center.y);
+
+  var zAngle = (positions[33][0] - positions[7][0]) * -1;
+
+  //allowable distance
+  if (distance < 1.5 && distance > 0.5) {
+      //ref.changeStatus('STATUS_FOUND');
+
+      //set positions
+      ref.position.x = center.x - (hAngle / 2);
+      ref.position.y = center.y;
+      ref.rotation.y = hAngle / 100 / 2;
+      ref.rotation.z = zAngle / 100 / 1.5;
+      //size
+      ref.size.x = ((positions[14][0] - positions[0][0]) / 2) + 0.05 * (positions[14][0] - positions[0][0]);
+      ref.size.y = (ref.size.x / ref.images['front'].width) * ref.images['front'].height;
+      ref.size.z = ref.size.x * 3;
+      ref.position.z = (ref.size.z / 2) * -1;
+      //render
+  } else {
+      //ref.changeStatus('STATUS_SEARCH');
+      ref.size.x = 0;
+      ref.size.y = 0;
+  }
+}
+}
+
 async function main() {
 
 
@@ -57,15 +96,24 @@ async function main() {
 
         verts = keypoints.flat();
 
-        // if(face !== undefined)
-        // {
-        //     face.geometry.attributes.position.array = verts;
-        //     face.geometry.attributes.position.needsUpdate = true;
-        // }
-        // else
-        // {
-        //     createFaceGeometry(verts);
-        // }
+        if(face !== undefined)
+        {
+            //face.geometry.attributes.position.array = verts;
+            //face.geometry.attributes.position.needsUpdate = true;
+
+
+        }
+        else
+        { 
+          var points = [];  
+          for (let i = 0; i < keypoints.length; i++) {
+            
+            const [x, y, z] = keypoints[i];
+            points.push(new THREE.Vector3(x,y,z));
+          }
+
+          createFaceGeometry2(points);
+        }
   
         // Log facial keypoints.
         /*
@@ -87,5 +135,8 @@ async function main() {
 
     requestAnimationFrame(main);
   }
+
   
-  main();
+main();
+
+  
