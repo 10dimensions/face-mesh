@@ -11,9 +11,9 @@ const options = {
     cert: fs.readFileSync('cert.pem')
   };
 
-app.use(express.static(__dirname + '/www'));
-
 http.createServer(app).listen(8000);
 https.createServer(options, app).listen(8080);
+
+app.use(express.static(__dirname + '/www'));
 
 console.log('working on 8000 & 8080');

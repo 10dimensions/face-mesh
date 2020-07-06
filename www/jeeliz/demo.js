@@ -40,7 +40,8 @@ function init_faceFilter(videoSettings){
   JEEFACEFILTERAPI.init({
     followZRot: true,
     canvasId: 'jeeFaceFilterCanvas',
-    NNCpath: '../../../dist/', // root of NNC.json file
+    //NNCpath: 'www/jeeliz/model/', // root of NNC.json file
+    NNCpath: 'https://raw.githubusercontent.com/jeeliz/jeelizFaceFilter/master/dist/NNC.json',
     maxFacesDetected: 1,
     callbackReady: function(errCode, spec){
       if (errCode){
