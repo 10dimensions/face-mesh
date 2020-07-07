@@ -1,33 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="en-EN" />
-    
-    <title>JEELIZ FACE FILTER : THREE.JS CUBE DEMO WITH THREE.JS HELPER</title>
-    
-    <!-- INCLUDE JEELIZ FACEFILTER SCRIPT -->
-    <script src="./jeeliz/lib/jeelizFaceFilter.js"></script>
+    <head>
+        <title>Camera Project</title>
+        <meta charset="utf-8">
+    <link rel="stylesheet" href="./clmtrackr/css/style.css" type="text/css" />    
+    </head>
+    <body>
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- three.js r54 -->
+        <script src="./three/three.min.js"></script>
+        <!-- clmtrack -->
+        <script src="./clmtrackr/js/util.js"></script>
+        <script src="./clmtrackr/js/GLTFLoader.js"></script>
+        <script src="./clmtrackr/js/clmtrackr.js"></script>
+        <div id="tryon">
+            <video id="camera" loop></video>
+            <canvas id="overlay"></canvas>
+        </div>
+        <button id="start">Start</button>
+        <div id="debug"></div>
+        <script src="./clmtrackr/js/app.js"></script>
 
-    <!-- INCLUDE THREE.JS -->
-    <script src="./three/three.min.js"></script>
-
-    <!-- INCLUDE JEELIZRESIZER -->
-    <script src="./jeeliz/lib/JeelizResizer.js"></script>
-
-    <!-- INCLUDE JEELIZ THREE.JS HELPER -->
-    <script src="./jeeliz/lib/JeelizThreejsHelper.js"></script>
-
-    <!-- INCLUDE DEMO SCRIPT -->
-    <script src="./jeeliz/demo.js"></script>
-
-    <!-- INCLUDE FORK ME ON GITHUB BANNER -->
-    <!-- <script src="../../appearance/widget.js"></script> -->
-
-    <link rel="stylesheet" href="./jeeliz/css/style.css" type="text/css" />
-  </head>
-  
-  <body onload="main()" style='color: white'>
-    <canvas width="600" height="600" id='jeeFaceFilterCanvas'></canvas>
-  </body>
+    </body>
 </html>
