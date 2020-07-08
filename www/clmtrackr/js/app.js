@@ -127,7 +127,7 @@
                             ref.rotation.z = zAngle / 100 / 1.5;
                             //size
                             ref.size.x = ((positions[14][0] - positions[0][0]) / 2) + 0.05 * (positions[14][0] - positions[0][0]);
-                            ref.size.y = (ref.size.x / ref.images['front'].width) * ref.images['front'].height;
+                            ref.size.y = ref.size.x;   //(ref.size.x / ref.images['front'].width) * ref.images['front'].height;
                             ref.size.z = ref.size.x * 3;
                             ref.position.z = (ref.size.z / 2) * -1;
                             //render
@@ -211,7 +211,7 @@
                 // Load a glTF resource
                 loader.load(
                     // resource URL
-                    'https://localhost:8080/public/aviator.gltf',
+                    'https://raw.githubusercontent.com/10dimensions/face-mesh/master/public/aviator.gltf',
                     // called when the resource is loaded
                     function ( gltf ) {
                         
