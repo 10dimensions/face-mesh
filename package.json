@@ -18,6 +18,6 @@
   "homepage": "https://github.com/10dimensions/face-mesh#readme",
   "dependencies": {
     "@tensorflow-models/facemesh": "0.0.3",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
